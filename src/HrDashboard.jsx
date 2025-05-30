@@ -220,7 +220,7 @@ export default function HrDashboard() {
               </th>
             ))}
             <th className="px-4 py-3 text-left">Reason</th>
-            <th className="px-4 py-3 text-left">Role</th>
+            {/* <th className="px-4 py-3 text-left">Role</th> */}
             <th className="px-4 py-3 text-left">Action</th>
           </tr>
         </thead>
@@ -256,7 +256,7 @@ export default function HrDashboard() {
                   </button>
                 )}
               </td>
-              <td className="px-4 py-3">{req.profiles?.role}</td>
+              {/* <td className="px-4 py-3">{req.profiles?.role}</td> */}
               <td className="px-4 py-3 space-x-2 whitespace-nowrap">
                 <button
                   onClick={() => updateStatus(req.id, LEAVE_STATUS.APPROVED)}
@@ -303,7 +303,7 @@ export default function HrDashboard() {
               </button>
             )}
           </div>
-          <div className="text-xs mb-2">👤 {req.profiles?.role}</div>
+          {/* <div className="text-xs mb-2">👤 {req.profiles?.role}</div> */}
           <div className="flex gap-2">
             <button
               onClick={() => updateStatus(req.id, 'approved')}

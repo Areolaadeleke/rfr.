@@ -142,6 +142,7 @@ useEffect(() => {
           className="w-full max-w-4xl bg-white rounded-md shadow-md p-6 space-y-6 sm:space-y-8"
         >
         <div>
+          
           <h3 className="text-4xl font-extrabold text-gray-900 mb-6 text-center">
               Leave Request Form
           </h3>

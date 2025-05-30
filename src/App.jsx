@@ -192,18 +192,21 @@ function App() {
     <div className="min-h-screen bg-gradient-to-br from-blue-100 to-blue-200 p-2 font-serif">
       <div className="w-full mx-auto bg-white shadow-md rounded-md p-5">
         <div className="bg-white rounded-lg shadow-sm p-6 mb-8">
-             <header className="flex flex-col sm:flex-row justify-between items-center mb-4 gap-2">
-  <h1 className="bg-white text-xl font-semibold text-gray-800 px-2 py-1 rounded border border-gray-200 shadow-sm">
-    🗂️ Leave Management System
-  </h1>
+          
+        <header className="flex flex-col sm:flex-row justify-between items-center mb-4 gap-2">
+              <img src='rfr.png' alt='rfr' className='w-[130px]'/>
 
-  <button
-    onClick={logout}
-    className="px-3 py-1 bg-red-600 text-white rounded hover:bg-red-700 transition-colors shadow-sm text-sm"
-  >
-    Logout
-  </button>
-</header>
+              <h1 className="bg-white text-xl font-semibold text-gray-800 px-2 py-1 rounded border border-gray-200 shadow-sm">
+                🗂️ Leave Management System
+              </h1>
+
+              <button
+                onClick={logout}
+                className="px-3 py-1 bg-red-600 text-white rounded hover:bg-red-700 transition-colors shadow-sm text-sm"
+              >
+                Logout
+              </button>
+        </header>
 
 
         </div>
