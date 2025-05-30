@@ -191,17 +191,23 @@ function App() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-100 to-blue-200 p-2 font-serif">
       <div className="w-full mx-auto bg-white shadow-md rounded-md p-5">
-        <header className="flex justify-between items-center mb-8">
-          <h1 className="text-3xl font-bold text-gray-800">
-            Leave Management System
-          </h1>
-          <button
-            onClick={logout}
-            className="px-4 py-2 bg-red-600 text-white rounded-md hover:bg-red-700 transition-colors"
-          >
-            Logout
-          </button>
-        </header>
+        <div className="bg-white rounded-lg shadow-sm p-6 mb-8">
+             <header className="flex flex-col sm:flex-row justify-between items-center mb-4 gap-2">
+  <h1 className="bg-white text-xl font-semibold text-gray-800 px-2 py-1 rounded border border-gray-200 shadow-sm">
+    🗂️ Leave Management System
+  </h1>
+
+  <button
+    onClick={logout}
+    className="px-3 py-1 bg-red-600 text-white rounded hover:bg-red-700 transition-colors shadow-sm text-sm"
+  >
+    Logout
+  </button>
+</header>
+
+
+        </div>
+
 
         <div className="mb-6 mx-auto max-w-xs px-4 py-3 bg-blue-50 border border-blue-200 rounded-md flex items-center gap-2 text-blue-800 shadow-sm">
           <svg
@@ -225,9 +231,10 @@ function App() {
 
         {role === 'staff' && (
           <section>
-            <h2 className="text-2xl font-semibold text-gray-800 mb-4">
-              Staff Leave Request Form
-            </h2>
+           <h2 className="bg-indigo-50 text-2xl font-semibold text-indigo-700 px-4 py-3 rounded-md border border-indigo-200 shadow-sm mb-4">
+              📝 Staff Leave Request Form
+           </h2>
+
             <LeaveForm user={user} />
           </section>
         )}

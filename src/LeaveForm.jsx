@@ -7,6 +7,7 @@ import { LEAVE_STATUS } from './Constants';
 
 
 
+
 export default function LeaveForm({ user }) {
   const [form, setForm] = useState({
     name:'',
@@ -109,8 +110,8 @@ useEffect(() => {
     }
 
     emailjs.send(
-        'service_r9dh2rv',         // Replace with actual Service ID
-        'template_ijyr8xk', // New template ID you just created
+        'service_r9dh2rv',         
+        'template_ijyr8xk', 
         {
           name: form.name,
           email: form.email,
@@ -119,7 +120,7 @@ useEffect(() => {
           end_date: form.end_date,
           reason: form.reason
         },
-        'tUEnM5jWC3FPhXbtw'          // EmailJS public key
+        'tUEnM5jWC3FPhXbtw'          
       ).then(
         (result) => {
           toast.success('HR notified successfully:', result.text);
@@ -135,7 +136,7 @@ useEffect(() => {
   return (
  <div className="min-h-screen flex flex-col bg-gray-50">
       {/* Main content grows to fill vertical space */}
-      <main className="flex-grow flex items-center justify-center px-4 py-10">
+      <main className="flex-grow flex items-center justify-center px-4 py-7">
         <form
           onSubmit={handleSubmit}
           className="w-full max-w-4xl bg-white rounded-md shadow-md p-6 space-y-6 sm:space-y-8"
@@ -145,10 +146,13 @@ useEffect(() => {
               Leave Request Form
           </h3>
 
-         <h3 className="text-2xl bg-blue-100 p-4 rounded-lg shadow-md w-full max-w-md mx-auto text-center sm:text-left">
-              <span className="font-bold text-blue-800 block sm:inline">Welcome:</span>
-              <span className="font-normal text-gray-600 block sm:inline sm:ml-2">{user.email}</span>
-         </h3>
+        <h3 className="text-2xl bg-blue-100 p-4 rounded-lg shadow-md w-full max-w-xl mx-auto text-center sm:text-left">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-center sm:justify-start gap-1 sm:gap-2">
+              <span className="font-bold text-blue-800">Welcome:</span>
+              <span className="font-normal text-gray-600">{user.email}</span>
+            </div>
+        </h3>
+
 
 
 
@@ -380,22 +384,37 @@ useEffect(() => {
                 />
 
                 {/* Show calculated leave days and warning if over limit */}
-                <div className="text-sm text-gray-600 mt-2 space-y-1">
-                          <div>Days Requested: <span className="font-semibold">{leaveDays}</span></div>
-                          <div>Days Already Taken: <span className="font-semibold">{form.days_taken || 0}</span></div>
-                          <div>Total Entitlement: <span className="font-semibold">{form.total_entitlement || 0}</span></div>
-                          <div>Remaining Balance: <span className="font-semibold">
-                            {(parseInt(form.total_entitlement) || 0) - (parseInt(form.days_taken) || 0)}
-                          </span></div>
-                        </div>
+                <div className="bg-gray-50 p-4 rounded-md border border-gray-200 text-sm text-gray-700 space-y-3 mt-4 shadow-sm">
+                          <div className="flex justify-between">
+                            <span className="text-gray-500">Days Requested:</span>
+                            <span className="font-semibold text-gray-800">{leaveDays}</span>
+                          </div>
+                          <div className="flex justify-between">
+                            <span className="text-gray-500">Days Already Taken:</span>
+                            <span className="font-semibold text-gray-800">{form.days_taken || 0}</span>
+                          </div>
+                          <div className="flex justify-between">
+                            <span className="text-gray-500">Total Entitlement:</span>
+                            <span className="font-semibold text-gray-800">{form.total_entitlement || 0}</span>
+                          </div>
+                          <div className="flex justify-between">
+                            <span className="text-gray-500">Remaining Balance:</span>
+                            <span className="font-semibold text-gray-800">
+                              {(parseInt(form.total_entitlement) || 0) - (parseInt(form.days_taken) || 0)}
+                            </span>
+                          </div>
+                </div>
+
 
                         {isOverLimit && (
-                          <div className="text-red-600 text-sm font-medium mt-1">
-                            ❌ Requested leave exceeds available balance.
+                          <div className="flex items-center gap-2 mt-2 text-sm font-medium text-red-600 bg-red-50 border border-red-200 rounded-md p-2">
+                                        <span>❌</span>
+                                        <span>Requested leave exceeds available balance.</span>
                           </div>
+
                         )}
 
-            </div>
+                </div>
 
 
           </div>
