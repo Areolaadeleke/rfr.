@@ -146,12 +146,11 @@ useEffect(() => {
               Leave Request Form
           </h3>
 
-        <h3 className="text-2xl bg-blue-100 p-4 rounded-lg shadow-md w-full max-w-xl mx-auto text-center sm:text-left">
-            <div className="flex flex-col sm:flex-row sm:items-center justify-center sm:justify-start gap-1 sm:gap-2">
-              <span className="font-bold text-blue-800">Welcome:</span>
-              <span className="font-normal text-gray-600">{user.email}</span>
-            </div>
-        </h3>
+       <div className="bg-blue-100 p-4 rounded-lg shadow-md w-full max-w-xl mx-auto">
+          <h3 className="text-2xl font-bold text-blue-800 text-center sm:text-left">Welcome:</h3>
+          <p className="text-gray-600 text-center sm:text-left break-words">{user.email}</p>
+       </div>
+
 
 
 
