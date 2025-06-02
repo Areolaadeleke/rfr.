@@ -15,7 +15,7 @@ const LeaveStatsChart = () => {
     const fetchStats = async () => {
       const { data, error } = await supabase
         .from("leave_requests")
-        .select("reason, status"); // change 'reason' to 'leave_type' if appropriate
+        .select("reason, status");
 
       if (error) {
         console.error("Error fetching stats", error);
@@ -26,7 +26,7 @@ const LeaveStatsChart = () => {
       const statusCount = { approved: 0, rejected: 0, pending: 0 };
 
       data.forEach((request) => {
-        const type = request.reason || "Other"; // fallback if empty
+        const type = request.reason || "Other"; 
         const status = request.status || "pending";
 
         typeCount[type] = (typeCount[type] || 0) + 1;

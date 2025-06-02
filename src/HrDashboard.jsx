@@ -20,6 +20,7 @@ export default function HrDashboard() {
   const PAGE_SIZE = 5;
   const [selectedIds, setSelectedIds] = useState([]);
   const [expandedReasons, setExpandedReasons] = useState({});
+  const [disabled, setDisabled] = useState(false);
 
   const fetchRequests = async () => {
     setLoading(true);
@@ -123,6 +124,7 @@ export default function HrDashboard() {
       toast.success(`Status updated to ${newStatus}`);
       if (fetch) fetchRequests();
     }
+    setDisabled(true);
   };
 
   return (
@@ -260,13 +262,19 @@ export default function HrDashboard() {
               <td className="px-4 py-3 space-x-2 whitespace-nowrap">
                 <button
                   onClick={() => updateStatus(req.id, LEAVE_STATUS.APPROVED)}
-                  className="bg-green-600 text-white px-3 py-1 rounded hover:bg-green-700"
+                  disabled= {disabled}
+                  className={`px-3 py-1 text-xs rounded text-white ${
+                    disabled ? 'bg-green-400 cursor-not-allowed' : 'bg-green-600 hover:bg-green-700'
+                  }`}
                 >
                   Approve
                 </button>
                 <button
                   onClick={() => updateStatus(req.id, LEAVE_STATUS.REJECTED)}
-                  className="bg-red-600 text-white px-3 py-1 rounded hover:bg-red-700"
+                  disabled={disabled}
+                   className={`px-3 py-1 text-xs rounded text-white ${
+                      disabled ? 'bg-red-400 cursor-not-allowed' : 'bg-red-600 hover:bg-red-700'
+                    }`}
                 >
                   Reject
                 </button>
