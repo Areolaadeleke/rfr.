@@ -4,11 +4,12 @@ import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import emailjs from '@emailjs/browser';
 import { LEAVE_STATUS } from './Constants';
+import Header from './Header';
 
 
 
 
-export default function LeaveForm({ user }) {
+export default function LeaveForm({ user, setCurrentUser }) {
   const [form, setForm] = useState({
     name:'',
     email:'',
@@ -135,6 +136,7 @@ useEffect(() => {
 
   return (
  <div className="min-h-screen flex flex-col bg-gray-50">
+      
       {/* Main content grows to fill vertical space */}
       <main className="flex-grow flex items-center justify-center px-4 py-7">
         <form
@@ -434,9 +436,7 @@ useEffect(() => {
         </form>
       </main>
 
-      <footer className="bg-white border-t border-gray-300 py-4 text-center text-gray-600 text-sm">
-        © {new Date().getFullYear()} RFR Professionals Leave Management. All rights reserved.
-      </footer>
+      
     </div>
 
   );
