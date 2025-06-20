@@ -44,6 +44,7 @@ function AdminHeader({ setCurrentView }) {
                 Loan
               </span>
               <ul className="absolute hidden group-hover:block bg-white shadow-md rounded mt-1 min-w-[12rem] text-sm font-normal z-50">
+                <NavItem name= "Loan Dashboard" viewKey="loan" onClick={() => setSidebarOpen(false)} />
                 <NavItem name="Loan History" viewKey="loanhistory" />
                 <NavItem name="Repayment" viewKey="repay" />
               </ul>
@@ -116,6 +117,7 @@ function AdminHeader({ setCurrentView }) {
                 <ul className="ml-4 mt-1 space-y-1">
                   <NavItem name="Loan History" viewKey="loanhistory" onClick={() => setSidebarOpen(false)} />
                   <NavItem name="Repayment" viewKey="repay" onClick={() => setSidebarOpen(false)} />
+                  <NavItem name= "Loan Dashboard" viewKey="loan" onClick={() => setSidebarOpen(false)} />
                 </ul>
               )}
             </li>
