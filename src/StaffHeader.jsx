@@ -5,15 +5,15 @@ function Header({ setCurrentView }) {
 
   return (
     <>
-      {/* Header bar */}
+      {/* Top Header Bar */}
       <div className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between bg-white shadow-md h-20 px-4 sm:px-6">
-        {/* Logo + Title */}
+        {/* Logo and Title */}
         <div className="flex items-center space-x-4">
           <img src="rfr.png" alt="Company Logo" className="w-20 h-20 object-contain" />
           <h1 className="text-2xl font-bold text-gray-800 hidden sm:block">Staff Portal</h1>
         </div>
 
-        {/* Hamburger button - Mobile only */}
+        {/* Hamburger for Mobile */}
         <button
           className="sm:hidden text-gray-800 text-3xl"
           onClick={() => setSidebarOpen(true)}
@@ -22,7 +22,7 @@ function Header({ setCurrentView }) {
           ☰
         </button>
 
-        {/* Desktop nav */}
+        {/* Desktop Navigation */}
         <nav className="hidden sm:block w-auto">
           <ul className="flex gap-6 text-base font-semibold text-gray-800">
             <li
@@ -31,38 +31,53 @@ function Header({ setCurrentView }) {
             >
               Staff Directory
             </li>
-            <li
-              onClick={() => setCurrentView("leave")}
-              className="cursor-pointer hover:bg-blue-100 hover:text-blue-800 rounded px-3 py-2 transition-colors"
-            >
-              Leave Request
-            </li>
-            <li
-              onClick={() => setCurrentView("loan")}
-              className="cursor-pointer hover:bg-blue-100 hover:text-blue-800 rounded px-3 py-2 transition-colors"
-            >
-              Loan Request
+
+            {/* Leave Dropdown */}
+            <li className="relative group">
+              <div className="cursor-pointer hover:bg-blue-100 hover:text-blue-800 rounded px-3 py-2 transition-colors">
+                Leave Request
+              </div>
+              <ul className="absolute left-0 mt-1 bg-white shadow-md rounded hidden group-hover:block w-40 z-50">
+                <li
+                  onClick={() => setCurrentView("leave")}
+                  className="cursor-pointer px-4 py-2 hover:bg-blue-50 text-sm"
+                >
+                  New Leave
+                </li>
+                <li
+                  onClick={() => setCurrentView("leavehistory")}
+                  className="cursor-pointer px-4 py-2 hover:bg-blue-50 text-sm"
+                >
+                  Leave History
+                </li>
+              </ul>
             </li>
 
-             <li
-              onClick={() => setCurrentView("loanhistory")}
-              className="cursor-pointer hover:bg-blue-100 hover:text-blue-800 rounded px-3 py-2 transition-colors"
-            >
-              Loan History
+            {/* Loan Dropdown */}
+            <li className="relative group">
+              <div className="cursor-pointer hover:bg-blue-100 hover:text-blue-800 rounded px-3 py-2 transition-colors">
+                Loan Request
+              </div>
+              <ul className="absolute left-0 mt-1 bg-white shadow-md rounded hidden group-hover:block w-40 z-50">
+                <li
+                  onClick={() => setCurrentView("loan")}
+                  className="cursor-pointer px-4 py-2 hover:bg-blue-50 text-sm"
+                >
+                  New Loan
+                </li>
+                <li
+                  onClick={() => setCurrentView("loanhistory")}
+                  className="cursor-pointer px-4 py-2 hover:bg-blue-50 text-sm"
+                >
+                  Loan History
+                </li>
+              </ul>
             </li>
-
-            <li
-              onClick={() => setCurrentView("leavehistory")}
-              className="cursor-pointer hover:bg-blue-100 hover:text-blue-800 rounded px-3 py-2 transition-colors"
-            >
-              Leave History
-            </li>
-
           </ul>
         </nav>
       </div>
 
-      {/* Mobile Sidebar - slide in */}
+      {/* Mobile Sidebar */}
       <aside
         className={`fixed top-0 left-0 bottom-0 w-64 bg-white shadow-lg z-60 transform transition-transform duration-300 ease-in-out
           ${sidebarOpen ? "translate-x-0" : "-translate-x-full"}
@@ -83,7 +98,7 @@ function Header({ setCurrentView }) {
           </button>
         </div>
         <nav className="p-4">
-          <ul className="flex flex-col gap-4 text-base font-semibold text-gray-800">
+          <ul className="flex flex-col gap-3 text-base font-semibold text-gray-800">
             <li
               onClick={() => {
                 setCurrentView("staffList");
@@ -93,6 +108,8 @@ function Header({ setCurrentView }) {
             >
               Staff Directory
             </li>
+
+            {/* Leave Group */}
             <li
               onClick={() => {
                 setCurrentView("leave");
@@ -104,6 +121,17 @@ function Header({ setCurrentView }) {
             </li>
             <li
               onClick={() => {
+                setCurrentView("leavehistory");
+                setSidebarOpen(false);
+              }}
+              className="ml-4 pl-2 text-sm text-gray-600 cursor-pointer hover:text-blue-800"
+            >
+              ↳ Leave History
+            </li>
+
+            {/* Loan Group */}
+            <li
+              onClick={() => {
                 setCurrentView("loan");
                 setSidebarOpen(false);
               }}
@@ -111,14 +139,23 @@ function Header({ setCurrentView }) {
             >
               Loan Request
             </li>
+            <li
+              onClick={() => {
+                setCurrentView("loanhistory");
+                setSidebarOpen(false);
+              }}
+              className="ml-4 pl-2 text-sm text-gray-600 cursor-pointer hover:text-blue-800"
+            >
+              ↳ Loan History
+            </li>
           </ul>
         </nav>
       </aside>
 
-      {/* Overlay behind sidebar */}
+      {/* Overlay when sidebar is open */}
       {sidebarOpen && (
         <div
-          className="fixed inset-0 bg-gray-100 bg-opacity-30 z-50 sm:hidden"
+          className="fixed inset-0 bg-gray-800 bg-opacity-30 z-40 sm:hidden"
           onClick={() => setSidebarOpen(false)}
           aria-hidden="true"
         />

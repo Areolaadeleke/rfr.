@@ -12,6 +12,7 @@ import EmployeeHandbook from './EmpolyeeHandbook'
 import AdminDashboard from './AdminDashboard'
 import Loader from './Loader'
 import { ToastContainer } from 'react-toastify'
+import CompanyCalendar from './CompanyCalendar'
 
 
 
@@ -73,6 +74,7 @@ function App() {
         <Route path='/contact' element={<ContactForm />} />
         {/* <Route path='/ply' element={<EmployeeHandbook />} /> */}
         <Route path='/good' element={<EmployeeHandbook />} />
+        <Route path='/cal' element={<CompanyCalendar />} />
       </Routes>
     </Router>
 

@@ -8,7 +8,7 @@ const LeaveTimeline = () => {
     const fetchRequests = async () => {
       const { data, error } = await supabase
         .from("leave_requests")
-        .select("*, profiles(email)")
+        .select("*, name")
         .order("created_at", { ascending: false });
 
       if (error) {
@@ -44,10 +44,15 @@ const LeaveTimeline = () => {
           </div>
 
           <div className="text-gray-700">
-            <p className="text-sm font-medium mb-1">
-              <span className="font-semibold">{req.profiles?.name}</span> requested{" "}
-              <span className="italic">{req.leave_type}</span> leave
-            </p>
+           <p className="text-sm font-medium mb-2 text-gray-800">
+              <span className="font-semibold text-blue-600 hover:underline cursor-pointer">
+                {req.name}
+              </span>
+              requested
+              <span className="italic text-gray-600">{req.reason || "no reason specified"}</span>
+              leave
+           </p>
+
 
             <span
               className={`inline-block text-xs font-semibold px-2 py-1 rounded-md ${

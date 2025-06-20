@@ -88,7 +88,10 @@ function Header({ setCurrentUser }) {
     <div className="fixed top-0 left-0 w-full z-50 bg-white shadow-md">
       <div className="flex items-center justify-between px-4 sm:px-6 py-4 h-20">
         <div className="w-36">
-          <img src="rfr.png" alt="rfr" className="w-36" />
+          <Link to='/'>
+             <img src="rfr.png" alt="rfr" className="w-36"  />
+          </Link>
+          
         </div>
 
         {/* Hamburger for mobile */}

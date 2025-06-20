@@ -298,10 +298,18 @@ return (
             <h4 className="text-green-700 font-semibold">💬 Internal Support</h4>
             <p className="text-sm text-gray-600 mt-2">Get help with tools, HR, or account issues.</p>
           </a>
-          <a href="#" className="block p-5 bg-white rounded-lg border shadow hover:shadow-md transition">
+          {/* <a href="#" className="block p-5 bg-white rounded-lg border shadow hover:shadow-md transition">
             <h4 className="text-yellow-700 font-semibold">🗓️ Company Calendar</h4>
             <p className="text-sm text-gray-600 mt-2">Stay updated on key dates and holidays.</p>
-          </a>
+          </a> */}
+
+           <Link
+                    to="/cal"
+                   className="block p-5 bg-white rounded-lg border shadow hover:shadow-md transition"
+                  >
+                   <h4 className="text-yellow-700 font-semibold">🗓️ Company Calendar</h4>
+                   <p className="text-sm text-gray-600 mt-2">Stay updated on key dates and holidays.</p>
+            </Link>
         </div>
       </div>
 
@@ -329,12 +337,12 @@ return (
         <h3 className="text-xl font-semibold text-blue-800 mb-6">💬 What Our Team Says</h3>
         <div className="grid gap-6 sm:grid-cols-2">
           <div className="bg-white p-5 border rounded-lg shadow">
-            <p className="italic text-gray-700">"The portal has made my onboarding process seamless and stress-free!"</p>
-            <p className="text-sm text-gray-500 mt-2 text-right">– Jessica L., Marketing</p>
+            <p className="italic text-gray-700">“The onboarding experience at RFR Professionals was incredibly smooth. I felt supported from day one!”</p>
+            <p className="text-sm text-gray-500 mt-2 text-right">– Adesola Oladejo., HR</p>
           </div>
           <div className="bg-white p-5 border rounded-lg shadow">
-            <p className="italic text-gray-700">"I love having quick access to all HR resources and the calendar."</p>
-            <p className="text-sm text-gray-500 mt-2 text-right">– David K., Engineering</p>
+            <p className="italic text-gray-700">"Having a central portal for all my HR needs has saved me so much time—everything I need is just a click away!”</p>
+            <p className="text-sm text-gray-500 mt-2 text-right">– Adeleke A., IT Support</p>
           </div>
         </div>
       </div>
