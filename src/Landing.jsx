@@ -231,48 +231,49 @@ return (
       <div className="mb-12">
         <h3 className="text-xl font-semibold text-blue-800 mb-4 text-center">⚡ Quick Links</h3>
         <div className="flex flex-wrap justify-center gap-4">
-          <ul className="flex gap-2">
-                <li>
-                  <Link
-                    to="/good"
-                    className="bg-blue-100 hover:bg-blue-200 text-blue-800 px-4 py-2 rounded-full text-sm font-medium transition"
-                  >
-                    Employee Handbook
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    to="/expense-claims"
-                    className="bg-blue-100 hover:bg-blue-200 text-blue-800 px-4 py-2 rounded-full text-sm font-medium transition"
-                  >
-                    Expense Claims
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    to="/login"
-                    className="bg-blue-100 hover:bg-blue-200 text-blue-800 px-4 py-2 rounded-full text-sm font-medium transition"
-                  >
-                    Leave Request
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    to="/contact"
-                    className="bg-blue-100 hover:bg-blue-200 text-blue-800 px-4 py-2 rounded-full text-sm font-medium transition"
-                  >
-                    IT Helpdesk
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    to="/hr-policies"
-                    className="bg-blue-100 hover:bg-blue-200 text-blue-800 px-4 py-2 rounded-full text-sm font-medium transition"
-                  >
-                    HR Policies
-                  </Link>
-                </li>
-              </ul>
+        <ul className="flex flex-wrap justify-center gap-4 sm:gap-6 p-4">
+          <li>
+            <Link
+              to="/good"
+              className="bg-blue-100 hover:bg-blue-200 text-blue-800 px-4 py-2 rounded-full text-sm font-medium transition"
+            >
+              Employee Handbook
+            </Link>
+          </li>
+          <li>
+            <Link
+              to="/expense-claims"
+              className="bg-blue-100 hover:bg-blue-200 text-blue-800 px-4 py-2 rounded-full text-sm font-medium transition"
+            >
+              Expense Claims
+            </Link>
+          </li>
+          <li>
+            <Link
+              to="/login"
+              className="bg-blue-100 hover:bg-blue-200 text-blue-800 px-4 py-2 rounded-full text-sm font-medium transition"
+            >
+              Leave Request
+            </Link>
+          </li>
+          <li>
+            <Link
+              to="/contact"
+              className="bg-blue-100 hover:bg-blue-200 text-blue-800 px-4 py-2 rounded-full text-sm font-medium transition"
+            >
+              IT Helpdesk
+            </Link>
+          </li>
+          <li>
+            <Link
+              to="/hr-policies"
+              className="bg-blue-100 hover:bg-blue-200 text-blue-800 px-4 py-2 rounded-full text-sm font-medium transition"
+            >
+              HR Policies
+            </Link>
+          </li>
+        </ul>
+
         </div>
       </div>
 
