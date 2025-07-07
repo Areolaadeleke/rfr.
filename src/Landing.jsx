@@ -339,11 +339,11 @@ return (
         <div className="grid gap-6 sm:grid-cols-2">
           <div className="bg-white p-5 border rounded-lg shadow">
             <p className="italic text-gray-700">“The onboarding experience at RFR Professionals was incredibly smooth. I felt supported from day one!”</p>
-            <p className="text-sm text-gray-500 mt-2 text-right">– Adesola Oladejo., HR</p>
+            <p className="text-sm text-gray-500 mt-2 text-right">👤 Adesola Oladejo., HR</p>
           </div>
           <div className="bg-white p-5 border rounded-lg shadow">
             <p className="italic text-gray-700">"Having a central portal for all my HR needs has saved me so much time—everything I need is just a click away!”</p>
-            <p className="text-sm text-gray-500 mt-2 text-right">– Adeleke A., IT Support</p>
+            <p className="text-sm text-gray-500 mt-2 text-right">👤 Adeleke A., IT Support</p>
           </div>
         </div>
       </div>
@@ -397,10 +397,10 @@ return (
 
       {/* Employee Spotlight */}
       <div className="mb-12 max-w-5xl mx-auto bg-white p-6 rounded-lg shadow-lg">
-        <h3 className="text-xl font-semibold text-blue-800 mb-6 text-center">👤 Managing Director’s Note</h3>
+        <h3 className="text-xl font-semibold text-blue-800 mb-6 text-center">👤 Senior Partner/Chief Executive Officer Note</h3>
         <div className="flex flex-col sm:flex-row items-center gap-6">
           <img
-            src="/E.R.png"
+            src="/md.jpeg"
             alt="Employee"
             className="w-32 h-32 rounded-full object-cover shadow"
           />
@@ -429,7 +429,7 @@ return (
         <blockquote className="italic text-indigo-700 text-lg text-center italic">
           “........Consistently adding value”
         </blockquote>
-        <p className="text-right text-sm text-gray-500 mt-2">— MD, Emmanuel Rominiyi</p>
+        <p className="text-right text-sm text-gray-500 mt-2">👤 Senior Partner/Chief Executive Officer Note, Emmanuel Rominiyi</p>
       </div>
 
       {/* How It Works */}
