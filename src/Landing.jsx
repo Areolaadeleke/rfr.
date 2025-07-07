@@ -201,7 +201,7 @@ return (
           Welcome to RFR Professionals Portal Hub
         </h1>
         <p className="text-lg sm:text-xl text-gray-700 max-w-3xl mx-auto">
-          Your central gateway to staff services, HR tools, and management systems — all in one place.
+          Your central gateway to staff services, HR tools, and management systems  all in one place.
         </p>
       </div>
 
@@ -240,14 +240,7 @@ return (
               Employee Handbook
             </Link>
           </li>
-          <li>
-            <Link
-              to="/expense-claims"
-              className="bg-blue-100 hover:bg-blue-200 text-blue-800 px-4 py-2 rounded-full text-sm font-medium transition"
-            >
-              Expense Claims
-            </Link>
-          </li>
+          
           <li>
             <Link
               to="/login"
@@ -264,14 +257,7 @@ return (
               IT Helpdesk
             </Link>
           </li>
-          <li>
-            <Link
-              to="/hr-policies"
-              className="bg-blue-100 hover:bg-blue-200 text-blue-800 px-4 py-2 rounded-full text-sm font-medium transition"
-            >
-              HR Policies
-            </Link>
-          </li>
+          
         </ul>
 
         </div>
